@@ -39,3 +39,8 @@ button {
 li {
     padding: 0.75rem 0;
 }
+
+li.completed {
+    color: #6b7280;
+    text-decoration: line-through;
+}

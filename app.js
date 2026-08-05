@@ -20,8 +20,19 @@ form.addEventListener("submit", (event) => {
     updateTaskCount();
 });
 
+taskList.addEventListener("click", (event) => {
+    const taskItem = event.target.closest("li");
+
+    if (!taskItem) {
+        return;
+    }
+
+    taskItem.classList.toggle("completed");
+    updateTaskCount();
+});
+
 function updateTaskCount() {
-    const count = taskList.children.length;
+    const count = taskList.querySelectorAll("li:not(.completed)").length;
     const label = count === 1 ? "task" : "tasks";
     taskCount.textContent = `${count} ${label} remaining`;
 }
