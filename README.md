@@ -1,6 +1,6 @@
 # FocusBoard
 
-A lightweight personal task board for organizing work in the browser.
+A simple browser-based task manager for everyday planning.
 
 ## Planned features
 
