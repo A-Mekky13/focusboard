@@ -1,6 +1,6 @@
 # FocusBoard
 
-A focused task board for organizing daily work in the browser.
+A focused browser-based task manager for organizing everyday work.
 
 ## Planned features
 
