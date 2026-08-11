@@ -3,6 +3,14 @@ const input = document.querySelector("#task-input");
 const taskList = document.querySelector("#task-list");
 const taskCount = document.querySelector("#task-count");
 
+const savedTasks = localStorage.getItem("focusboard.tasks");
+
+if (savedTasks) {
+    taskList.innerHTML = savedTasks;
+}
+
+updateTaskCount();
+
 form.addEventListener("submit", (event) => {
     event.preventDefault();
 
@@ -18,6 +26,7 @@ form.addEventListener("submit", (event) => {
 
     input.value = "";
     updateTaskCount();
+    saveTasks();
 });
 
 taskList.addEventListener("click", (event) => {
@@ -29,10 +38,15 @@ taskList.addEventListener("click", (event) => {
 
     taskItem.classList.toggle("completed");
     updateTaskCount();
+    saveTasks();
 });
 
 function updateTaskCount() {
     const count = taskList.querySelectorAll("li:not(.completed)").length;
     const label = count === 1 ? "task" : "tasks";
     taskCount.textContent = `${count} ${label} remaining`;
+}
+
+function saveTasks() {
+    localStorage.setItem("focusboard.tasks", taskList.innerHTML);
 }
