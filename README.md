@@ -2,11 +2,14 @@
 
 A focused browser-based task manager for organizing everyday work.
 
-## Planned features
+## Features
 
 - Add and complete tasks
-- Filter tasks by status
 - Save tasks between browser sessions
+
+## Planned features
+
+- Filter tasks by status
 
 ## Run locally
 
