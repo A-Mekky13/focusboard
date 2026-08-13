@@ -86,3 +86,5 @@ function updateTaskCount() {
 function saveTasks() {
     localStorage.setItem("focusboard.tasks", taskList.innerHTML);
 }
+
+input.focus();
