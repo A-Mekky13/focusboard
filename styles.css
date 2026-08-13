@@ -44,3 +44,13 @@ li.completed {
     color: #6b7280;
     text-decoration: line-through;
 }
+
+#task-filters {
+    display: flex;
+    gap: 0.5rem;
+}
+
+#task-filters button.active {
+    background: #1f2937;
+    color: white;
+}
