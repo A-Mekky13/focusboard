@@ -2,8 +2,9 @@ const form = document.querySelector("#task-form");
 const input = document.querySelector("#task-input");
 const taskList = document.querySelector("#task-list");
 const taskCount = document.querySelector("#task-count");
-
 const taskFilters = document.querySelector("#task-filters");
+const clearCompletedButton = document.querySelector("#clear-completed");
+
 let currentFilter = "all";
 
 const savedTasks = localStorage.getItem("focusboard.tasks");
@@ -64,6 +65,16 @@ taskFilters.addEventListener("click", (event) => {
         button.classList.toggle("active", button === filterButton);
     });
 
+    filterTasks();
+});
+
+clearCompletedButton.addEventListener("click", () => {
+    taskList.querySelectorAll("li.completed").forEach((taskItem) => {
+        taskItem.remove();
+    });
+
+    updateTaskCount();
+    saveTasks();
     filterTasks();
 });
 
